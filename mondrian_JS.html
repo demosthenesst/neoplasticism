@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A là Mondrian, JS</title>
+    <link rel="icon" type="image/x-icon" href="icons/mondrian_favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css" integrity="sha512-+ouAqATs1y4kpPMCHfKHVJwf308zo+tC9dlEYK9rKe7kiP35NiP+Oi35rCFnc16zdvk9aBkDUtEO3tIPl0xN5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="mondrianJSstyle.css">
+</head>
+
+
+
+
+<body>
+
+  <div id="examples">
+    <h1>ΠΑΡΑΔΕΙΓΜΑΤΑ ΑΛΓΟΡΙΘΜΙΚΗΣ ΕΙΚΑΣΤΙΚΗΣ
+      <hr>
+      <span id="subtitle">Δυναμικές & διαδραστικές εφαρμογές της JavaScript</span>
+    </h1>
+    <p>Οι παρακάτω εφαρμογές οφείλουν τα δυναμικά και διαδραστικά χαρακτηριστικά τους στη Javascript. Η Javascript χειρίζεται πλήρως τόσο το πρότυπο αντικειμένων της HTML (Document Object Model, DOM) όσο και τις ιδιότητες CSS των κόμβων του DOM.</p>
+
+    <hr>
+
+    <div class="example-container">
+      <div class="left-container" id="left-container1">
+        <canvas id="mondrian-canvas">
+          <!-- <canvas id="mondrian-canvas" width="400" height="400"> -->
+        </canvas>
+
+        <div class="btn-container">
+          <button onclick="buttonClick ()"><i class="fa-solid fa-paintbrush"></i></button>
+        </div>
+      </div>
+
+      <div class="text-container">
+        <h2>Παράδειγμα 1</h2>
+        <p>Εδώ υλοποιειται μια αδρή προσομοίωση των χρωματικών συνθέσεων του Μοντριάν. Ο αλγόριθμος παραγωγής των απεικονίσεων διαθέτει πιθανοκρατικά χαρακτηριστικά και λειτουργεί ως εξής:</p>
+        <p>Ξεκινώντας με ένα τετράγωνο (απεικονισμένο σε στοιχείο canvas της HTML), κάθε εμφανιζόμενο ορθογώνιο διασπάται σε δύο μικρότερα ορθογώνια, κατά τη μεγαλύτερη διάσταση του προηγουμένου, με επιλογή τυχαίας διάστασης. Υπάρχει μέριμνα στον αλγόριθμο ώστε να μην εμφανίζονται πολύ μικρά ορθογώνια (δηλαδή η επιλογή της τυχαίας διάστασης πραγματοποιείται εντός ενός αποδεκτού εύρους). Έχει τεθεί όριο ώστε η αναδρομική διάσπαση να τερματίζει σε μερικά βήματα (για την αποφυγή μεγάλου αριθμού ορθογωνίων, κάτι που θα μας απομακρύνει από το επιθυμητό στυλ). Τέλος, ο χρωματισμός των ορθογωνίων γίνεται από μια λίστα προκαθορισμένων χρωμάτων, ξανά με τυχαία επιλογή.</p>
+        <p>Ο πιθανοκρατικός χαρακτήρας του αλγορίθμου είναι ο λόγος που κάθε παραγόμενη απεικόνιση είναι (με υψηλή πιθανότητα) μοναδική.</p>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="example-container">
+      <div class="left-container">
+          <div class="art-container" id="art-container-onehalf">
+              <div id="grid-onehalf" className ></div>
+          </div>
+          <div class="btn-container">
+              <button id="btn-onehalf"><i class="fa-solid fa-paintbrush"></i></button>
+          </div>
+      </div>
+
+      <div class="text-container">
+          <h2>Παράδειγμα 2</h2>
+          <p>Το δεύτερο παράδειγμα είναι φαινομενικά όμοιο με το παράδειγμα 1. Πρόκειται πάλι για παραγωγή απεικονίσεων στο στυλ των χρωματικών συνθέσεων, με πιθανοκρατικά χαρακτηριστικά διαστάσεων και χρωματισμού. Η λειτουργία του αλγόριθμου είναι όμως πολύ διαφορετική από το Παράδειγμα 1. Ακολουθεί συνοπτική περιγραφή.</p>
+
+          <p>Σε αρχικό ορθογώνιο στοιχείο (div) της HTML δημιουργείται, μέσω JS, ένα πλέγμα (grid) CSS τεσσάρων ή πέντε στηλών/γραμμών. Αποφασίζεται (με αρκετούς υπολογισμούς, τυχαίες παραμέτρους και  μέριμνα για την αποφυγή ακραίων περιπτώσεων) ο τρόπος με τον οποίον τα κελία εκτείνονται σε γραμμές/στήλες. Έπειτα, δημιουργούνται εντός των κελιών τα αντίστοιχα τετραγωνικά στοιχεία div της HTML (μέσω JS) και αναθέτονται στα στοιχεία αυτά τα χρώματα (τυχαία επιλεγμένα από συγκεκριμένη λίστα).</p>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="example-container">
+      <div id="mondrian2" class="canvas art-container"></div>
+      <div class="text-container">
+        <h2>Παράδειγμα 3</h2>
+        <p>Στo πνεύμα των προηγούμενων παραδειγμάτων, εδώ έχει υλοποιηθεί μια (απεριόριστη) ακολουθία προσομοιώσεων με χρήση JavaScript. Η έμπνευση προέρχεται από τις φημισμένες "συνθέσεις της Νέας Υόρκης". Ο αλγόριθμος παραγωγής διαθέτει και πάλι πιθανοκρατικά χαρακτηριστικά. Ο σχεδιασμός του περιγράφεται, σε γενικές γραμμές, ακολούθως.</p>
+        <p>Παράγονται ορθογώνια-λωρίδες (div) με τη μεγαλύτερη διάσταση τους ίση με τη διάσταση του κάδρου και τη μικρότερη να επιλέγεται τυχαία (μέσα σε καθορισμένο μικρό εύρος). Επίσης, τόσο ο προσανατολισμός όσο και η τοποθέτηση της λωρίδας εντός του κάδου επιλέγεται τυχαία. Εκτός αυτού, οι λωρίδες τοποθετούνται σωρευτικά στον νοητό άξονα που είναι κάθετος στην οθόνη. Ο χρωματισμός πραγματοποιείται επίσης κατά τυχαίο τρόπο, από λίστα συγκεκριμένων χρωμάτων (με προαιρετική εφαρμογή εφέ διαβάθμισης εντός του αλγορίθμου και εφέ σκίασης μέσω CSS).</p>
+        <p>Με κλικ στο πλαίσιο, εμφανίζεται η επόμενη παραγωγή.</p>
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="example-container">
+      <div class="left-container">
+        <div class="art-container" id="art-container3">
+          <div class="color-picker-container">
+            <div class="red colors paints"></div>
+            <div class="blue colors paints"></div>
+            <div class="yellow colors paints"></div>
+            <div class="white2 colors paints"></div>
+            <div class="black colors paints"></div>
+            <div class="white colors paints"></div>
+          </div>
+          <div id="mondrian-container3">
+            <div class="mondrian-block block1"></div>
+            <div class="mondrian-block block2"></div>
+            <div class="mondrian-block block3"></div>
+            <div class="mondrian-block block4"></div>
+            <div class="mondrian-block block5"></div>
+            <div class="mondrian-block block6"></div>
+            <div class="mondrian-block block7"></div>
+            <div class="mondrian-block block8"></div>
+            <div class="mondrian-block block9"></div>
+            <div class="mondrian-block block10"></div>
+            <div class="mondrian-block block11"></div>
+            <div class="mondrian-block block12"></div>
+            <div class="mondrian-block block13"></div>
+            <div class="mondrian-block block14"></div>
+          </div>
+        </div>
+        <div class="btn-container">
+          <button onclick="clear3 ()"><i class="fa-solid fa-rotate-right"></i></button>
+        </div>
+      </div>
+
+      <div class="text-container">
+        <h2>Παράδειγμα 4</h2>
+        <p>
+          Σε εντελώς διαφορετική κατεύθυνση απο τα προηγούμενα παραδείγματα, εδώ έχει υλοποιηθεί μια απλή διαδραστική εφαρμογή. Τα έξι ανώτερα τετραγωνικά πλάισια είναι "μπογίες" με τις οποίες μπορούμε να "χρωματίσουμε" το κάτω πλέγμα, στο στυλ των συνθέσεων του Μοντριάν.
+        </p>
+        <p>
+          Επιλέγουμε με κλικ τη "μπογιά" και έπειτα με κλικ το ορθογώνιο που επιθυμούμε να "χρωματίσουμε". Αν επιθυμούμε να αλλάξουμε χρωματισμό σε κάποιο κελί του πλέγματος, επιλέγουμε εκ νέου τη "μπογιά" και κάνουμε κλικ στο κελί. 
+        </p>
+        
+        <p>Πατώντας το κουμπί της εκκαθάρισης, όλα τα κελιά επιστρέφουν στην αρχική κατάσταση του άσπρου χρώματος.</p>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+  </div>
+
+  <div id="links">
+    <ul>
+      <li onclick="location.href='index.html'">Εισαγωγή</li>
+      <li onclick="location.href='hypertext.html'">HTML</li>
+      <li onclick="location.href='CSS.html'">CSS</li>
+      <li onclick="location.href='javascript.html'">JavaScript</li>
+      <li onclick="location.href='mondrian_CSS_1.html'">Mondrian CSS: 1</li>
+      <li onclick="location.href='mondrian_CSS_2.html'">Mondrian CSS: 2</li>
+      <li onclick="location.href='mondrian_JS.html'">Mondrian JS</li>
+      <li onclick="location.href='end.html'">Επίλογος</li>
+    </ul>
+  </div>
+
+</body>
+
+<!--1 mondrian rectangles -->
+<script>
+  function randInt (min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+  }
+  
+  class Point {
+    constructor (x, y) {
+      this.x = x
+      this.y = y
+    }
+  }
+
+  var colors1 = [
+    'rgb(235, 230, 225)', // white
+    'rgb(235, 230, 225)', // white
+    'rgb(250, 255, 230)', // white2
+    'rgb(250, 255, 230)', // white2
+    'rgb(30, 5, 10)', // black2
+    'rgb(0, 45, 125)', // blue
+    'rgb(215, 45, 35)', // red
+    'rgb(235, 190, 20)' // yellow 
+  ]
+  
+  class Rectangle {
+    constructor (min, max) {
+      this.min = min;
+      this.max = max;
+    }
+  
+    get width () {
+      return this.max.x - this.min.x;
+    }
+  
+    get height () {
+      return this.max.y - this.min.y;
+    }
+  
+    draw (ctx) {
+      ctx.strokeRect(this.min.x, this.min.y, this.max.x - this.min.x, this.max.y - this.min.y);
+    }
+  
+    split (xPad, yPad, depth, limit, ctx) {
+      ctx.fillStyle = colors1[randInt(0, colors1.length)];
+      ctx.fillRect(this.min.x, this.min.y, this.max.x, this.max.y);
+      this.draw(ctx);
+
+      if (depth === limit) {
+        return;
+      }
+
+      if (this.width < 2 * xPad || this.height < 2 * yPad) {
+        return;
+      }
+  
+      var r1 = new Rectangle();
+      var r2 = new Rectangle();
+      if (this.width > this.height) {
+        var x = randInt(this.min.x + xPad, this.max.x - xPad);
+        r1 = new Rectangle(this.min, new Point(x, this.max.y));
+        r2 = new Rectangle(new Point(x, this.min.y), this.max);
+
+      } else {
+        var y = randInt(this.min.y + yPad, this.max.y - yPad);
+        r1 = new Rectangle(this.min, new Point(this.max.x, y));
+        r2 = new Rectangle(new Point(this.min.x, y), this.max);
+      }
+  
+      r1.split(xPad, yPad, depth + 1, limit, ctx);
+      r2.split(xPad, yPad, depth + 1, limit, ctx);
+    }
+  }
+  
+  var canvas = document.getElementById('mondrian-canvas');
+  var ctx = canvas.getContext('2d');
+
+  var canvasParent = document.getElementById("left-container1");
+
+  document.body.onresize = function(){
+    canvas.width = canvasParent.clientWidth;
+    canvas.height = canvasParent.clientWidth;
+     ctx.lineWidth = 6;
+     ctx.strokeStyle = "rgb(50,50,50)";
+     buttonClick ()
+    //  document.querySelector('#mondrian-canvas').load;
+  };
+
+  canvas.width = canvasParent.clientWidth;
+  canvas.height = canvasParent.clientWidth;
+
+  ctx.beginPath();
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = "rgb(50,50,50)";
+  ctx.lineWidth = 6;
+  
+  /*
+  //shadow
+
+  ctx.shadowOffsetX = 0;
+  ctx.shadowOffsetY = 0;
+  ctx.shadowBlur    = 5;
+  ctx.shadowColor   = "rgb(60,60,60)";
+  
+  */
+  
+  var xPad = Math.floor(canvas.width * 0.1);
+  var yPad = Math.floor(canvas.height * 0.1);
+  
+  var initialRect = new Rectangle(new Point(0, 0), new Point(canvas.width, canvas.height));
+  
+  initialRect.split(xPad, yPad, /*depth*/ 1, /*limit*/ 4, ctx)
+
+  function buttonClick () {
+    var xPad = Math.floor(canvas.width * 0.1);
+    var yPad = Math.floor(canvas.height * 0.1);
+    var initialRect = new Rectangle(new Point(0, 0), new Point(canvas.width, canvas.height));
+    
+    initialRect.split(xPad, yPad, /*depth*/ 1, /*limit*/ 4, ctx);
+  }
+
+ </script>
+
+<!--onehalf mondrian rectangles -->
+<script>
+  // generate a grid width x height
+  const generateGrid = (width, height) => {
+      let gridRow = [];
+      for (let i = 0; i < width; i++) {
+          gridRow.push(0);
+      }
+      let grid = [];
+      for (let g = 0; g < height; g++) {
+          grid.push(gridRow);
+      }
+      for (let d = 0; d < width * height; d++) {
+          let section = document.getElementById("grid-onehalf");
+          section.style.gridTemplateColumns = `repeat(${width}, 1fr)`;
+          section.style.gridTemplateRows = `repeat(${height}, 1fr)`;
+      }
+      return grid;
+  };
+  
+  //update HTML and CSS
+  const updateHTMLandCSS = (
+      elems, //rectanglesTotal in total
+      colIndex, //col
+      rowIndex, //row
+      cols, //moveRight
+      rows, //moveDown
+      squareColor //color
+  ) => {
+      document
+          .getElementById("grid-onehalf")
+          .appendChild(document.createElement("div"))
+          .classList.add(`square${elems}`);
+  
+      document.querySelector(`.square${elems}`).style.gridArea = `${rowIndex + 1}/${colIndex + 1}/${rowIndex + rows + 1}/${colIndex + cols + 1}`;
+      document.querySelector(`.square${elems}`).style.background = squareColor;
+      updateDataId(squareColor,`${rowIndex + 1}/${colIndex + 1}/${rowIndex + rows + 1}/${colIndex + cols + 1}`)
+  };
+  
+  
+  let data_colors = ''
+  let data_gridArea = ''
+  const updateDataId = (colorString, gridAreaStr) => {
+      data_colors.concat(colorString)
+      data_gridArea.concat(gridAreaStr)
+      document.getElementById("grid-onehalf").setAttribute("data-id", `${data_colors}${data_gridArea}`);
+  }
+  
+  const generateMondrian = () => {
+      document.getElementById("grid-onehalf").innerHTML = "";
+      /*const colorS = [
+          "#243982", //blue
+          "#e03e33", //red
+          "#f0c943", // yellow
+          "#edebe0", // white
+          "#edebe0", //white
+          "#edebe0", //white
+          "#d7dee2", // grey
+          "#d7dee2", // grey
+          "#243982", //blue
+          "#e03e33", //red
+          "#f0c943", // yellow
+          "#edebe0", // white
+          "#edebe0", //white
+          "#edebe0", //white
+          "#d7dee2", // grey
+          "#d7dee2", // grey
+          "#181411" // black
+      ];*/
+  
+      const colorS = [
+      ' #154269', // very-dark-blue
+      ' #62949D', // dark-blue
+      ' #80AEAE', // light-blue
+      ' #598E8A', // green-blue
+      ' #154269', // very-dark-blue
+      ' #62949D', // dark-blue
+      ' #62949D', // dark-blue
+      ' #62949D', // dark-blue
+      ' #80AEAE', // light-blue
+      ' #598E8A', // green-blue
+      //' #CD372B', // red3
+      //' #CD372B', // red3
+      ' #B3B490', // beige
+      ' #B3B490', // beige
+      ' #B3B490', // beige
+      ' #AEA375', // yellow
+      ' #AEA375', // yellow
+      ' #AEA375', // yellow
+      ' #030403', // black3
+      ' #555' // gray
+      //' #495861' // lining
+      ];
+  
+      const gridWidth = generateRandomNumber(4, 5);
+      const gridHeight = generateRandomNumber(4, 5);
+      let grid = generateGrid(gridWidth, gridHeight);
+      let rectanglesTotal = 1;
+  
+      // loop through rows and columns
+      for (let row = 0; row < gridHeight; row++) {
+          for (let col = 0; col < gridWidth; col++) {
+              if (grid[row][col] === 0) {
+  
+                  //spots available
+                  const availabilityDown = gridHeight - row - 1;
+                  let indxOfNextSpace = col + 1;
+                  let availabilityRight = 0;
+  
+                  for (i = indxOfNextSpace; i < gridWidth; i++) {
+                      if (grid[row][i] !== 0) {
+                          break;
+                      }
+                      availabilityRight++
+                  }
+  
+                  //how many available spots to move
+                  const moveRight = generateRandomNumber(1, availabilityRight);
+                  const moveDown = generateRandomNumber(1, availabilityDown);
+  
+                  //chose a color and change the grid array item from 0 to color name
+                  let color = colorS[generateRandomNumber(0, colorS.length - 1)];
+  
+                  let newGrid = grid.map((rows, index) => {
+                      if (index >= row && index <= row + moveDown - 1) {
+                          let newCols = rows.map((cols, i) => {
+                              if (i >= col && i <= col + moveRight - 1 && cols === 0) {
+                                  return color;
+                              } else return cols;
+                          });
+                          return newCols;
+                      } else return rows;
+                  });
+                  grid = newGrid;
+  
+                  //update HTML and CSS from utils.js
+                  updateHTMLandCSS(rectanglesTotal, col, row, moveRight, moveDown, color);
+                  rectanglesTotal++;
+              }
+          }
+      }
+  };
+  
+  document.onload = generateMondrian();
+  document.getElementById("btn-onehalf").onclick = function () {
+    generateMondrian();
+  };
+  document.getElementById("grid-onehalf").onclick = function () {
+    generateMondrian();
+  };
+  // HELPER FUNCTIONS utils.js
+  // generate random number between min and max
+  function generateRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+</script>
+
+<!--2 mondrian stripes ny -->
+<script>
+
+  //var colors2 = ["#1f1e24","#b72015","#3552ba","#e1b806", "rgb(235, 230, 225)", "rgb(250, 255, 230)"]
+  
+  var red = "rgb(240, 40, 40)"
+  var blue = "rgb(0, 109, 180)"
+  var yellow = "rgb(250, 205, 25)"
+  
+  var colors2 = [yellow, yellow, yellow, yellow, yellow, yellow, blue, blue, red, red]
+  var skew = ["0","0","0","0","0","0","0","0","0","0","0","0"]
+  var blocks = 0
+  var even = 0
+  var paint = 0
+  
+  document.getElementById('mondrian2').addEventListener('click', function(e){
+    // Keep a copy of canvas with below snippet
+    // var cln = document.getElementById('canvas').cloneNode(true)
+    // cln.id = ""
+    // document.getElementById('folio').appendChild(cln)
+    
+    document.getElementById('mondrian2').innerHTML = ""
+    
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+     buildBlock()
+    buildBlock()
+    
+    })
+    
+  function buildBlock(){
+  even++
+  var canvas = document.getElementById('mondrian2').getBoundingClientRect()
+  var block = document.createElement('div')
+  block.className = "block"
+    
+    if(even % 2 === 0) {
+      block.style.width = canvas.width + /*25*/15 + "px"//////////////////////////////////////
+      block.style.height = Math.floor(Math.random()*canvas.height)*/*0.33*/0.01 /**/ + 10 + "px"//////////////////////////////
+  
+      block.style.left = -10 + "px"
+      block.style.top = Math.floor(Math.random()*canvas.height) - 7 + "px"
+      block.style.transform = "skewY("+skew[Math.floor(Math.random()*skew.length)]+"deg)"
+    } else {
+      block.style.width = Math.floor(Math.random()*canvas.width)*/*0.33*/0.01 /**/ + 10 + "px"///////////////////////////////////////////
+      block.style.height = canvas.height + /*25*/15 + "px"/////////////////////////////////
+  
+  
+      block.style.left = Math.floor(Math.random()*canvas.width) - 7 + "px"
+      block.style.top = -10 + "px"
+      block.style.transform = "skewX("+skew[Math.floor(Math.random()*skew.length)]+"deg)"
+    }
+  
+  block.style.background = colors2[Math.floor(Math.random()*colors2.length)]
+    
+  // gradient fills
+  /*block.style.background = "linear-gradient(to bottom right,"+colors2[Math.floor(Math.random()*colors2.length)]
+  +","
+  +colors2[Math.floor(Math.random()*colors2.length)]
+  +","
+  +colors2[Math.floor(Math.random()*colors2.length)]
+  +")"*/
+    
+  document.getElementById('mondrian2').appendChild(block)  
+  
+  }
+  
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  buildBlock()
+  
+    setInterval(function(){
+      document.getElementById('mondrian2').click()    
+    }, 5 * 1000) 
+  
+</script>
+
+<!-- 3 mondrian painter -->
+<script>
+  const colorPickers = document.querySelectorAll(".colors");
+
+  const mondrianBlock = document.querySelectorAll(".mondrian-block");
+
+  let paint3 = "white";
+
+
+  /////////////////////////////////////
+  function colorClicked() {
+    colorPickers.forEach(clr => {
+
+      clr.classList.remove("outline");
+    
+    });
+    //this.classList.toggle("outline");
+  };
+
+////////////////////////
+
+  colorPickers.forEach(color => {
+      color.addEventListener("click", () => {
+
+        colorClicked()
+
+          let style = getComputedStyle(color);
+          let paint3 = style.backgroundColor;
+
+          color.classList.toggle("outline");
+
+          mondrianBlock.forEach(block => {
+              block.addEventListener("click", () => {
+                  block.style.backgroundColor = paint3;
+                  block.style.backgroundImage = 'url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png")';
+              });
+          });
+      });
+  });
+
+  function clear3 () {
+    paint3 = "white";
+    mondrianBlock.forEach(block => {
+      block.style.backgroundColor = paint3;
+      block.style.backgroundImage = '';
+    });
+
+    colorPickers.forEach(clr => {
+      clr.classList.remove("outline");
+    });
+  };
+
+</script>
+
+</html>

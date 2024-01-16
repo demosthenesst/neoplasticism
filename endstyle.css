@@ -1,0 +1,120 @@
+
+    :root {
+  --blue: #466cbd;
+  --red: #ad372d;
+  --yellow: #edd322;
+  --gray: #d4d4d2;
+  --white: #f1f2ed;
+  --vd-blue: #3c5786;
+  --vd-green: #5b9074;
+  --vd-orange: #b66400;
+  --vd-gray: #8f877c;
+  --vd-pink: #f3a591;
+  --gaps: 2rem;
+}
+
+
+html {
+    font-family: 'Comfortaa', Georgia, Arial, cursive, sans-serif;
+    
+    background-image: url("icons/theo-van-doesburg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--gaps);
+  background-color: rgba(0,0,0, 0.8);
+  width: 70%;
+  margin: 3rem auto 3rem auto;
+  padding: var(--gaps);
+}
+
+#left * {
+  margin: 0;
+}
+
+#left > * {
+  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+}
+
+#left {
+  display: grid;
+  gap: var(--gaps);
+}
+
+h1 {
+  background-color: var(--vd-green);
+  color: var(--white);
+  margin: 0;
+  padding: 1rem;
+}
+
+hr {
+  border: 1px solid var(--white);
+}
+
+#description {
+  background-color: var(--vd-orange);
+  color: var(--white);
+  padding: 1rem;
+  line-height: 150%;
+}
+
+[class^="fa"] {
+  font-size: 1rem;
+}
+
+#links {
+  background-color: var(--vd-gray);
+  background-image: url("https://www.transparenttextures.com/patterns/fabric-of-squares.png");
+  color: var(--white);
+  padding-inline: 1rem;
+  font-weight: 700;
+}
+
+#links p {
+  margin-block: 0.7rem;
+}
+
+
+#links p:hover {
+  cursor: pointer;
+  color: var(--yellow);
+}
+
+#sources {
+  background-color: var(--vd-blue);
+  background-color: #283a59;
+  color: var(--white);
+  padding: 1rem;
+}
+
+#sources span {
+  font-weight: 700;
+  color: var(--vd-pink);
+  text-align: center;
+  display: block;
+  margin-top: 1em;
+}
+
+#sources div {
+  margin-block: 1rem;
+  line-height: 150%;
+}
+
+#sources div:last-child {
+  margin-bottom: 0;
+}
+
+#sources a {
+  color: var(--vd-pink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#sources a:hover {
+  color: var(--yellow);
+}

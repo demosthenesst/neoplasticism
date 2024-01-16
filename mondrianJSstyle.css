@@ -1,0 +1,375 @@
+
+/* <!-- general --> */
+
+  
+  html{
+    font-family: 'Comfortaa', Georgia, Arial, cursive, sans-serif;
+    --my-blue: rgba(0, 45, 125, 0.9);
+    --my-white: rgb(240, 240, 240);
+    --my-red: rgb(140, 0, 0);
+    --my-yellow: rgb(255, 195, 105);
+    background-image: url("icons/my_mondrian_png_2.png");
+    background-size: cover;
+    background-attachment: fixed;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem 0 1rem 0;
+    margin: -1rem -2rem 2rem -2rem;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    border-left: 0;
+    border-right: 0;
+  }
+
+  h2 {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0;
+    border: 4px solid rgba(0, 0, 0, 0.5);
+    border-left: 0;
+    border-right: 0;
+    margin: 0;
+  }
+
+  p {
+    line-height: 140%;
+  }
+
+  #subtitle {
+    display:inline-block;
+    font-size: 80%;
+  }
+
+  h1 > hr{
+    margin: 0.5rem 2rem 0.5rem 2rem;
+  }
+
+  #examples {
+    width: 80%;
+    margin: 4rem auto 4rem auto;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color:whitesmoke;
+  }
+
+  .example-container {
+    display: grid;
+    grid-template-columns: 35% auto;
+    align-items: top;
+    box-sizing: border-box;
+    column-gap: 3rem;
+    margin: 2.5rem 0 2.5rem 0;
+  }
+
+  .left-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn-container {
+      margin: 2rem 0 0 0;
+    }
+
+  .art-container {
+    margin: 0;
+    box-shadow: 5px 5px 15px 5px black;
+  }
+
+  button {
+    box-sizing: border-box;
+    background-color: black;
+    color:whitesmoke;
+    font-size: 1rem;
+    /* font-weight: 400; */
+    text-align: center;
+    /* padding: 6px; */
+    text-align: center;
+    border: 0.2rem solid whitesmoke;
+    border-radius: 50%;
+    /* padding: 0.5rem; */
+    box-shadow: 5px 5px 15px 5px #000000;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    transition: 0.1s;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  button:hover {
+    background-color: var(--my-red)
+  }
+
+  #links {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 1rem;
+  }
+
+  #links ul {
+    margin: 0 2rem 0 2rem;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 1rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #links li {
+    color:blanchedalmond;
+    font-size: small;
+    font-weight: 700;
+    text-align: center;
+    padding: 6px;
+    transition: 0.2s;
+
+  }
+
+  #links li:active {
+    transform: scale(0.95);
+  }
+
+  #links li:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  #links li:nth-child(2),
+  #links li:nth-child(4) {
+    background-color: var(--my-yellow);
+    color: black;
+  }
+
+  #links li:nth-child(1),
+  #links li:nth-child(5) {
+    background-color: var(--my-red);
+  }
+
+  #links li:nth-child(3),
+  #links li:nth-child(6) {
+    background-color: var(--my-blue);
+  }
+
+  #links li:nth-child(8) {
+    background-color: var(--my-white);
+    color: black;
+  }
+
+  #links li:nth-child(7) {
+    background-color: gray;
+    text-decoration: underline overline;
+    pointer-events: none;
+  }
+
+
+
+/* <!--Ex1  1 mondrian rectangles --> */
+
+
+  #mondrian-canvas {
+    box-sizing: border-box;
+    border: 4px solid rgb(50,50,50);
+    margin: 0;
+    padding: 0;
+    box-shadow: 5px 5px 15px 5px rgb(0, 0, 0);
+  }
+
+
+
+
+/* <!--Ex2 onehalf mondrian rectangles --> */
+
+  
+  #grid-onehalf {
+    background-color: #495861;
+    display: grid;
+    width: 100%;
+    aspect-ratio: 1;
+    grid-gap: 0.5rem;
+    box-sizing: border-box;
+    align-items: stretch;
+    justify-items: stretch;
+    margin:0;
+  }
+  
+
+
+/* <!--Ex3 2 mondrian stripes ny --> */
+
+  
+#mondrian2 {
+  position: relative;
+  width: 100%;  /*? */
+  aspect-ratio: 1;
+  background-color: rgb(200, 195, 180);
+  overflow: hidden;
+  font-size: 0;
+  cursor: pointer;
+}
+
+.block {
+  box-sizing: border-box;
+  position: absolute;
+  border: 1px solid #878787;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 1s linear forwards;
+  /*box-shadow: 0 0 5px black inset;*/
+}
+
+@keyframes fadeIn {
+  100% { opacity:1; }
+}
+
+
+
+/* <!--Ex4 3 mondrian painter --> */
+
+
+  #art-container3 {
+    /* width: 50vmin;
+    height: 37vw; */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    align-items: start;
+    padding:  0rem 0.5rem 0.5rem 0.5rem;
+    background-color: #888;
+  }
+  
+  #mondrian-container3 {
+    box-sizing: border-box;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: 5fr 4fr 4fr 4fr 6fr 4fr;
+    grid-template-rows: 5.5fr 4fr 4fr 4.5fr 4fr 3.5fr;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .mondrian-block {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: white; /* same as background*/
+  }
+  
+  .block1 {
+      grid-column: span 2;
+  }
+  .block2 {
+      grid-column: span 2;    
+  }
+  .block3 {
+      grid-column: span 2;
+  }
+  .block4 {
+      grid-row: span 2;
+  }
+  .block5 {
+      grid-column: span 3;
+      grid-row: span 3;
+  }
+  .block6 {
+      grid-column: span 2;
+      grid-row: span 2;
+  }
+  .block8 {
+      grid-column: span 2;
+  }
+  .block9 {
+      grid-column: span 4;
+  }
+  .block10 {
+    grid-row: span 3;
+  }
+  .block12 {
+      grid-column: span 2;
+      grid-row: span 2;
+  }
+  .block13 {
+      grid-column: span 2;
+      grid-row: span 2;
+  }
+  .block14 {
+      grid-row: span 2;
+  }
+  
+  .color-picker-container {
+    margin-block: 1rem 1rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .paints {
+    width: 40%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px black;
+    animation: 4s;
+    background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  }
+
+  .color-picker-container .red {
+    background-color: #C1392B;
+  }
+  
+  .color-picker-container .blue {
+    background-color: #2D3E50;
+  }
+  
+  .color-picker-container .yellow {
+    background-color: #F1C40F;
+  }
+  
+  .color-picker-container .white {
+    background-color: white;
+  }
+  
+  .color-picker-container .white2 {
+    background-color: rgb(225, 232, 196);
+  }
+  
+  .color-picker-container .black {
+    background-color: #1e050a;
+  }
+
+  .colors {
+    box-sizing: border-box;
+    animation: 0.2s;
+  }
+
+  .selected-color {
+    border: 0px solid black;
+    /* transform: scale(0.9); */
+  }
+  
+  .outline {
+    transform: scale(0.9);
+    /* clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); */
+  box-shadow: none;
+  }
+    
+

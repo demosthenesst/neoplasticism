@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΒΑΣΙΚΑ ΕΡΓΑΛΕΙΑ - JS</title>
+    <link rel="icon" type="image/x-icon" href="icons/mondrian_favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&display=swap" rel="stylesheet">
+    
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script> 
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+            }
+        };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.2/build/cjs/vexflow.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css" integrity="sha512-+ouAqATs1y4kpPMCHfKHVJwf308zo+tC9dlEYK9rKe7kiP35NiP+Oi35rCFnc16zdvk9aBkDUtEO3tIPl0xN5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="javascriptstyle.css">
+
+
+</head>
+
+<body>
+  <h1>ΓΝΩΡΙΜΙΑ ΜΕ ΤΗ JavaScript
+    <hr>
+    <span id="subtitle">Σταχυολόγηση παραδειγμάτων</span>
+  </h1>
+  
+  <div id="intro-text">
+    <p>Παρακάτω ακολουθούν μερικά παραδείγματα χρήσης της γλώσσας JavaScript (όπως αυτά που συναντάμε καθημερινά στο διαδίκτυο), από το τεράστιο εύρος εφαρμογών που έχει.</p>
+
+    <p>Ο βασικός κανόνας κάθε δημιουργικού εγχειρήματος ισχύει εξίσου και στον προγραμματισμό: το όριο της δημιουργίας είναι η φαντασία!</p>
+  </div>
+ 
+  <!-- search bar -->
+  <div class="example-container">
+    <h2>Πλαίσιο αναζήτησης</h2>
+      
+    <div id="search-bar">
+        <input type="text" id="myInput" onkeyup="searchBarFunction()" placeholder="Αναζήτηση..." title="Πληκτρολογήστε μέρος ονόματος">
+        <ul id="myUL">
+          <li>ΑΘΑΝΑΣΙΑΔΗΣ ΑΝΑΣΤΑΣΙΟΣ</li>
+          <li>ΑΡΑΠΑΚΗΣ ΠΑΝΑΓΙΩΤΗΣ</li>
+          <li>ΒΛΑΧΟΥ ΧΡΙΣΤΙΝΑ</li>
+          <li>ΒΟΥΡΟΥ ΧΡΥΣΟΥΛΑ</li>
+          <li>ΓΙΟΝΤΗΣ ΤΡΥΦΩΝ</li>
+          <li>ΖΑΧΑΡΟΠΟΥΛΟΥ ΑΙΚΑΤΕΡΙΝΗ</li>
+          <li>ΛΕΝΤΖΟΣ ΚΩΝΣΤΑΝΤΙΝΟΣ</li>
+          <li>ΜΑΡΚΟΥ ΒΑΡΒΑΡΑ</li>
+          <li>ΜΙΧΑΗΛΙΔΗΣ ΙΩΑΝΝΗΣ</li>
+          <li>ΠΑΝΑΓΙΩΤΙΔΟΥ ΑΘΑΝΑΣΙΑ</li>
+          <li>ΠΑΠΑΝΤΩΝΙΟΥ ΧΡΥΣΗ</li>
+          <li>ΠΕΤΡΙΔΟΥ ΣΟΦΙΑ</li>
+          <li>ΣΑΜΟΛΑΔΑ ΣΤΕΛΛΑ</li>
+          <li>ΣΙΩΝΗ ΕΥΑΓΓΕΛΙΑ</li>
+          <li>ΣΟΝΤΡΑ ΑΝΑΣΤΑΣΙΑ</li>
+          <li>ΣΤΑΛΙΔΗΣ ΔΗΜΟΣΘΕΝΗΣ</li>
+          <li>ΣΥΜΕΩΝΙΔΟΥ ΑΝΝΑ</li>
+          <li>ΤΕΝΤΖΕΡΗ ΜΑΡΙΑ</li>
+          <li>ΧΑΤΖΗΓΙΑΝΝΗΣ ΠΑΡΙΣ</li>
+          <li>ΨΑΡΙΚΟΓΛΟΥ ΧΑΡΙΚΛΕΙΑ</li> 
+        </ul>
+    </div>
+  
+  </div>
+  
+  <!-- menu -->
+  <div class="example-container">
+    <h2>Αναπτυσσόμενα μενού</h2>
+
+    <div id="collapsible-menu">
+      <button class="collapsible">ENOTHTA 1: HTML</button>
+      <div class="coll-content">
+          <p>Η HTML (HyperText Markup Language, Γλώσσα Σήμανσης Υπερκειμένου) είναι η κύρια γλώσσα σήμανσης για τις ιστοσελίδες, τα στοιχεία της οποίας είναι τα βασικά δομικά στοιχεία των ιστοσελίδων.</p>
+
+          <p>Η HTML γράφεται υπό μορφή στοιχείων HTML τα οποία αποτελούνται από ετικέτες (tags), οι οποίες περικλείονται μέσα σε σύμβολα «μεγαλύτερο από» και «μικρότερο από» (για παράδειγμα &lt;html&gt;), μέσα στο περιεχόμενο της ιστοσελίδας. Οι ετικέτες HTML συνήθως λειτουργούν ανά ζεύγη (για παράδειγμα &lt;h1&gt; και &lt;/h1&gt;), με την πρώτη να ονομάζεται ετικέτα έναρξης και τη δεύτερη ετικέτα λήξης (ή σε άλλες περιπτώσεις ετικέτα ανοίγματος και ετικέτα κλεισίματος αντίστοιχα). Ανάμεσα στις ετικέτες, οι σχεδιαστές ιστοσελίδων μπορούν να τοποθετήσουν κείμενο, πίνακες, εικόνες κλπ.</p>
+      </div>
+      <button class="collapsible">ENOTHTA 2: CSS</button>
+      <div class="coll-content">
+        <p>Η CSS (Cascading Style Sheets – Διαδοχικά Φύλλα Ύφους ή Επάλληλα Φύλλα Ύφους) είναι μια γλώσσα υπολογιστή που ανήκει στην κατηγορία των γλωσσών φύλλων ύφους που χρησιμοποιείται για τον έλεγχο της εμφάνισης ενός εγγράφου που έχει γραφτεί με μια γλώσσα σήμανσης. Χρησιμοποιείται δηλαδή για τον έλεγχο της εμφάνισης ενός εγγράφου που γράφτηκε στις γλώσσες HTML και XHTML, δηλαδή για τον έλεγχο της εμφάνισης μιας ιστοσελίδας και γενικότερα ενός ιστοτόπου. Η CSS είναι μια γλώσσα υπολογιστή προορισμένη να αναπτύσσει στυλιστικά μια ιστοσελίδα δηλαδή να διαμορφώνει περισσότερα χαρακτηριστικά, χρώματα, στοίχιση και δίνει περισσότερες δυνατότητες σε σχέση με την html.</p>
+      </div>
+      <button class="collapsible">ENOTHTA 3: JavaScript</button>
+      <div class="coll-content">
+        <p>Η JavaScript (JS) είναι διερμηνευμένη γλώσσα προγραμματισμού για ηλεκτρονικούς υπολογιστές. Αρχικά αποτέλεσε μέρος της υλοποίησης των φυλλομετρητών ιστού, ώστε τα σενάρια από την πλευρά του πελάτη (client-side scripts) να μπορούν να επικοινωνούν με τον χρήστη, να ανταλλάσσουν δεδομένα ασύγχρονα και να αλλάζουν δυναμικά το περιεχόμενο του εγγράφου που εμφανίζεται.</p>
+        <p>Η JavaScript είναι γλώσσα σεναρίων που βασίζεται στα πρωτότυπα (prototype-based), είναι δυναμική, με ασθενείς τύπους και έχει συναρτήσεις ως αντικείμενα πρώτης τάξης. Η σύνταξή της είναι επηρεασμένη από τη γλώσσα C. Η JavaScript αντιγράφει πολλά ονόματα και συμβάσεις ονοματοδοσίας από τη Java, αλλά γενικά οι δύο αυτές γλώσσες δεν σχετίζονται και έχουν πολύ διαφορετική σημασιολογία.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- password + modal -->
+  <div class="example-container">
+    <h2>Φόρμα εισόδου με συνθηματικό</h2>
+    <div id="pswd-info">
+      ( Για τις ανάγκες τις παρουσίασης, τα σωστά στοιχεία εισαγωγής είναι &nbsp; <span id="un-span"></span>&nbsp; και&nbsp; <span id="pswd-span"></span>. )
+
+    </div>
+
+    <div id="pass-container">
+
+        <label for="usrname">Όνομα χρήστη</label>
+        <input type="text" id="usrname" class="pass-input" name="usrname" required>
+
+        <label for="psw">Συνθηματικό</label>
+        <input type="password" id="psw" class="pass-input" name="psw" required>
+        
+        <button id="pass-button">Υποβολή</button>
+
+    <p id="failure">Λανθασμένο όνομα χρήστη ή συνθηματικό. Δοκιμαστε ξανά.</p>
+
+    </div>
+
+    <div id="modal-container">
+
+    <!-- The Modal -->
+    <div id="myModal">
+
+      <!-- Modal content -->
+      <div id="modal-content">
+        <p id="success">Επιτυχής είσοδος. Ανακατεύθυνση στο επόμενο παράδειγμα σε <span id="modal-counter">5</span>s.</p>
+        <span id="close-button">&times;</span>
+      </div>
+
+    </div>
+
+    </div>
+  </div>
+
+  <!-- clock -->
+  <div class="example-container" id="my-clock">
+    <h2>Αναλογικό ρολόι</h2>
+
+    <div class="clock">
+      <div>
+        <div class="info date"></div>
+        <div class="info day"></div>
+      </div>
+      <div class="dot"></div>
+      <div>
+        <div class="hour-hand"></div>
+        <div class="minute-hand"></div>
+        <div class="second-hand"></div>
+      </div>
+      <div>
+        <span class="h3">3</span>
+        <span class="h6">6</span>
+        <span class="h9">9</span>
+        <span class="h12">12</span>
+      </div>
+      <div class="diallines"></div>
+    </div>
+  
+  </div>
+
+  <!-- imaging -->
+  <div class="example-container">
+    <h2>Απεικονίσεις (δυναμικές & στατικές)</h2>
+
+    <div id="image-wrapper">
+      <div id="image-container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+  </div>
+  <!-- !imaging -->
+
+  <!-- function-plot -->
+  <div class="example-container">
+    <h2>Μαθηματικά εργαλεία</h2>    
+      <div id="function-plot">
+        <section id="plotSettings">
+          <label for="xMin">Ελάχιστη τιμή x:</label> <br> <input type=number id="xMin" value=-5 step=0.5 oninput="plot();">
+          <p></p>
+          <label for="xMin">Μέγιστη τιμή x:</label> <br> <input type=number id="xMax" value=5 step=0.5 oninput="plot();">
+          <p></p>
+          <label for="yMin">Ελάχιστη τιμή y:</label> <br> <input type=number id="yMin" value=-5 step=0.5 oninput="plot();">
+          <p></p>
+          <label for="yMax">Μέγιστη τιμή y:</label> <br> <input type=number id="yMax" value=5 step=0.5 oninput="plot();">
+          <p></p>
+          <label for="color">Χρώμα:</label> <input type=color id="color" onchange="plot();">
+          <p></p>
+          <label for="function">Συνάρτηση:</label> <br>
+          <input id="function" type="text" value="sin(x)" onchange="plot();">
+          <p></p>
+          <button id="graph-button" onclick="plot();"><i class="fa-solid fa-calculator"></i></button>
+        </section>
+        <section id="plot">
+          <div id="myFunction"> </div>
+        </section>
+      </div>
+  </div>
+  
+  <!-- typesetting -->
+
+  <div class="example-container">
+    <h2>Ψηφιακή στοιχειοθεσία</h2>
+    <div id="typesetting">
+      <strong>Θεώρημα.</strong> Δεδομένου μεταθετικού διαγράμματος
+
+      $$\begin{CD}
+      @.    X @>>> Y @>>> Z @>>> 0\\
+      @.  @V\alpha VV @V\beta VV @V\gamma VV\\
+      0 @>>> U @>>>V @>>> W
+      \end{CD}$$
+
+      αβελιανών ομάδων με ακριβείς γραμμές, υπάρχει κανονική ακριβής ακολουθία
+
+      $$\mathop{\mathrm{Ker}}(\alpha ) \to \mathop{\mathrm{Ker}}(\beta ) \to \mathop{\mathrm{Ker}}(\gamma ) \to \mathop{\mathrm{Coker}}(\alpha ) \to \mathop{\mathrm{Coker}}(\beta ) \to \mathop{\mathrm{Coker}}(\gamma ).\tag{1}$$
+      Επιπλέον:
+      <ul>
+        <li>Αν ο $X \to Y$ είναι μονομορφισμός, τότε ο πρώτος μορφισμός της ακολουθίας (1) είναι μονομορφισμός.</li>
+        <li>Αν ο $V \to W$ είναι επιμορφισμός, τότε ο τελευταίος μορφισμός της ακολουθίας (1) είναι επιμορφισμός.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="example-container">
+    <h2>Μουσικά εργαλεία</h2>
+    <div id="music"></div>
+  </div>
+
+
+  <div id="links">
+    <ul>
+      <li onclick="location.href='index.html'">Εισαγωγή</li>
+      <li onclick="location.href='hypertext.html'">HTML</li>
+      <li onclick="location.href='CSS.html'">CSS</li>
+      <li onclick="location.href='javascript.html'">JavaScript</li>
+      <li onclick="location.href='mondrian_CSS_1.html'">Mondrian CSS: 1</li>
+      <li onclick="location.href='mondrian_CSS_2.html'">Mondrian CSS: 2</li>
+      <li onclick="location.href='mondrian_JS.html'">Mondrian JS</li>
+      <li onclick="location.href='end.html'">Επίλογος</li>
+    </ul>
+  </div>
+</body>
+
+<!-- !search-bar -->
+<script>
+  function searchBarFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+      a = li[i];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+</script>
+<!-- !search-bar -->
+
+<!-- collapsible -->
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      } 
+    });
+  }
+</script>
+<!-- !collapsible -->
+
+<!-- password + modal -->
+<script>
+
+  // Get the modal
+  var modal = document.getElementById("myModal");
+  
+  // Get the <span> element that close the modal
+  var span = document.getElementById("close-button");
+    
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+
+//password
+
+var successMessage = document.getElementById("success");
+var failureMessage = document.getElementById("failure");
+
+var myUsername = "demosthenes";
+  var myPassword = "arnissa";
+
+  document.getElementById("un-span").innerText = myUsername;
+  document.getElementById("pswd-span").innerText = myPassword;
+
+document.getElementById("pass-button").addEventListener("click", function () {
+  var username = document.getElementById("usrname");
+  var password = document.getElementById("psw");
+
+  if (username.value != myUsername  || password.value != myPassword) {
+    document.getElementById("failure").style.display = "block";
+    //document.getElementById("success").style.display = "none";
+  } else {
+    document.getElementById("success").style.display = "block";
+    document.getElementById("failure").style.display = "none";
+    modal.style.display = "block";
+
+    //redirection
+
+    var seconds = 4;
+    var foo; 
+
+    function redirect() {
+      document.location.href = '#my-clock';
+    }
+
+    function updateSecs() {
+      document.getElementById("modal-counter").innerHTML = seconds;
+      seconds--;
+      if (seconds == -1) {
+        clearInterval(foo);
+        redirect();
+        modal.style.display = "none";
+        document.getElementById("modal-counter").innerHTML = "5";
+      }
+    }
+
+    function countdownTimer() {
+      foo = setInterval(function () {
+          updateSecs()
+      }, 1000);
+    }
+
+    countdownTimer();
+
+    //!redirection
+  }
+
+  username.value = "";
+  password.value = "";
+
+});
+
+
+// redirection
+
+
+</script>
+<!-- !password + modal -->
+
+<!-- clock -->
+<script>
+  var dialLines = document.getElementsByClassName('diallines');
+  var clockEl = document.getElementsByClassName('clock')[0];
+
+  for (var i = 1; i < 60; i++) {
+    clockEl.innerHTML += "<div class='diallines'></div>";
+    dialLines[i].style.transform = "rotate(" + 6 * i + "deg)";
+  }
+
+  function clock() {
+    var weekday = ["Κυριακή", "Δευτέρα", "Τρίτη", "Τετάρτη", "Πέμπτη", "Παρασκευή", "Σάββατο"];
+    d = new Date();
+    h = d.getHours();
+    m = d.getMinutes();
+    s = d.getSeconds();
+    date = d.getDate();
+    month = d.getMonth() + 1,
+    year = d.getFullYear();
+          
+    hDeg = h * 30 + m * (360/720);
+    mDeg = m * 6 + s * (360/3600);
+    sDeg = s * 6;
+    
+    hEl = document.querySelector('.hour-hand');
+    mEl = document.querySelector('.minute-hand');
+    sEl = document.querySelector('.second-hand');
+    dateEl = document.querySelector('.date');
+    dayEl = document.querySelector('.day');
+
+    var day = weekday[d.getDay()];
+    
+    if(month < 9) {
+      month = "0" + month;
+    }
+    
+    hEl.style.transform = "rotate("+hDeg+"deg)";
+    mEl.style.transform = "rotate("+mDeg+"deg)";
+    sEl.style.transform = "rotate("+sDeg+"deg)";
+    dateEl.innerHTML = date+"/"+month+"/"+year;
+    dayEl.innerHTML = day;
+  }
+
+  setInterval("clock()", 100);
+
+</script>
+<!-- !clock -->
+
+<!-- imaging -->
+<script>
+
+  const btn = document.getElementById("btn");
+  const shapes = [
+    "quad-circle-1",
+    "quad-circle-2",
+    "quad-circle-3",
+    "quad-circle-4",
+    "triangle-1",
+    "triangle-2",
+    "triangle-3",
+    "triangle-4",
+    "circle",
+  ];
+  const colors = ["#016afd", "#ffaa00", "#016afd", "#40bf59", "rgb(140, 0, 0)"];
+  
+  const boxes = document.querySelectorAll("#image-container div");
+  const container = document.querySelector("#image-container");
+  
+  let counter = 0; 
+  
+  let generatePattern = () => {
+    boxes.forEach((box) => {
+      box.className = "";
+      let i = Math.floor(Math.random() * shapes.length);
+      //let j = Math.floor(Math.random() * colors.length);
+      box.classList.add(shapes[i]);
+      
+      let j = Math.floor(Math.random() * 365);
+      let s = Math.floor(Math.random() * 365);
+      let t = Math.random()* 0.1 + 0.9;
+      box.style.backgroundColor = /*colors[j];*/ `hsl(${j}, 100%, 50%)`;
+      //container.style.backgroundColor = `hsl(${Math.floor(counter * 0.8) % 360}, 100%, 50%)`;
+  
+  
+      container.style.backgroundImage = `linear-gradient(to bottom right, hsl(${Math.floor(counter * 1.2) % 360}, 100%, 30%), hsl(${Math.floor((180-counter)* 1.2) % 360}, 100%, 30%))`;
+      
+      counter2 = 50*Math.sin(Math.PI * 0.001 * counter)
+      counter3 = 4*Math.cos(Math.PI * 0.001 * counter)
+      container.style.transform = `translate(${counter2}%, ${counter3}%)`;
+  
+  
+      box.style.transform = `scale(${t})`
+      
+      counter = counter + 1;
+      //box.style.backgroundColor = colors[j];
+    });
+  };
+  
+  //btn.addEventListener("click", generatePattern);
+  //window.addEventListener("load", generatePattern);
+  
+  setInterval(generatePattern, 200);/////////
+  
+  
+</script>
+<!-- !imaging -->
+
+<!-- function plot -->
+<script>
+
+let graphContainer = document.querySelector("#myFunction");
+//let graphContainer = document.querySelector("#plot");
+
+let contentsBounds = graphContainer.getBoundingClientRect();
+
+//let contentsBounds = document.body.getBoundingClientRect();
+let width = 1;
+let height = 1;
+let ratio = contentsBounds.width / width;
+width *= ratio;
+height *= ratio;
+
+
+  var parameters = {
+    target: '#myFunction',
+    //////////////////
+    width,
+    height,
+    ///////////////////////
+    data: [{
+    fn: 'sin(x)', 
+    color: 'red'
+    }],
+    grid: true,
+    yAxis: {domain: [-1, 1]},
+    //xAxis: {domain: [0, 2*Math.PI]}
+    xAxis: {domain: [-1, 1]}
+  };
+
+
+
+  function plot() {
+    var f = document.querySelector("#function").value;
+    var xMin = document.querySelector("#xMin").value;
+    var xMax = document.querySelector("#xMax").value;
+    var yMin = document.querySelector("#yMin").value;
+    var yMax = document.querySelector("#yMax").value;
+    var color = document.querySelector("#color").value;
+
+    parameters.data[0].fn = f;
+    parameters.xAxis.domain = [xMin, xMax];
+    parameters.yAxis.domain = [yMin, yMax];
+    parameters.data[0].color = color;
+
+    functionPlot(parameters);
+    
+  }
+
+  plot();
+
+</script>
+<!-- !function plot -->
+
+
+<!-- music -->
+<script>
+  const { Factory, EasyScore, System } = Vex.Flow;
+
+const vf = new Factory({
+  renderer: { elementId: 'music', width: 320, height: 280 },
+});
+
+const score = vf.EasyScore();
+const system = vf.System();
+
+// system
+//   .addStave({
+//     voices: [
+//       score.voice(score.notes('C#5/q, Bb4, A4, G#4', { stem: 'up' })),
+//       score.voice(score.notes('C#4/h, C#4', { stem: 'down' })),
+//     ],
+//   })
+//   .addClef('treble')
+//   .addTimeSignature('4/4');
+
+  system.addStave({
+  voices: [
+    score.voice(score.notes('C#5/q, B4, A4, G#4', {stem: 'up'})),
+    score.voice(score.notes('C#4/h, C#4', {stem: 'down'}))
+  ]
+}).addClef('treble').addTimeSignature('4/4');
+
+system.addStave({
+  voices: [
+    score.voice(score.notes('C#3/q, B2, A2/8, B2, C#3, D3', {clef: 'bass', stem: 'up'})),
+    score.voice(score.notes('C#2/h, C#2', {clef: 'bass', stem: 'down'}))
+  ]
+}).addClef('bass').addTimeSignature('4/4');
+
+system.addConnector();
+
+vf.draw();
+</script>
+<!-- !music -->
+
+</html>

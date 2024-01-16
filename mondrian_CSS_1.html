@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A là Mondrian, CSS 1</title>
+    <link rel="icon" type="image/x-icon" href="icons/mondrian_favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" type="text/css" href="mondrianCSS1style.css">
+ </head>
+
+<body>
+  
+  <div id="examples">
+
+    <h1>
+      ΠΑΡΑΔΕΙΓΜΑΤΑ ΑΛΓΟΡΙΘΜΙΚΗΣ ΕΙΚΑΣΤΙΚΗΣ
+      <hr>
+      <span id="subtitle">Στατικές εικαστικές παραγωγές με χρήση CSS (και svg)</span>
+    </h1>
+
+
+    <div id="examples-header">
+      <p>Τα παρακάτω παραδείγματα, εκτός από το τελευταίο, αποτελούν στατικές προσομοίωσεις έργων του Μοντριάν. Κάθε παράδειγμα έχει υλοποιηθεί αμιγώς με χρήση CSS (συγκεκριμένα με την, ιδιαιτέρως ταιριαστή για την περίσταση,  μέθοδο Grid του CSS). Η υλοποίηση με CSS είναι πολύ κοντινή-όσο μπορεί να ειπωθεί κάτι τέτοιο-στην κλασική ζωγραφική σε ψηφιακό μέσο.</p>
+      <ul>
+        <li>
+            Αφενός, οι πρώτες τέσσερις παραγωγές καθώς και η έκτη ακολουθούν το ύφος των λεγόμενων "χρωματικών συνθέσεων" του Μοντριάν.
+        </li>
+        <li>
+          Αφετέρου, η πέμπτη παραγωγή προσομοιάζει στις "συνθέσεις της Νέας Υόρκης".
+        </li>
+        <li>
+          Εξαίρεση αποτελεί το τελευταίο παράδειγμα. Πρόκειται για αρκετά πιστή προσομοίωση του έργου "Σύνθεση VII (Οι τρεις Χάριτες)", φιλοτεχνημένο από τον, επίσης πρωτοπορο του Νεπλαστικισμού, Τέο βαν Ντέσμπουργκ (Theo van Doesburg, 1883-1931). Έχει δημιουργηθεί ως Κλιμακούμενο Διανυσματικό Γραφικό (scalable vector graphic, svg), σε κατάλληλο επεξεργαστή svg, με ψηφιακή γραφίδα.
+        </li>
+      </ul>
+    </div>
+
+
+    <hr>
+
+    <div id="art-container">
+      <h2>Παράδειγμα 1</h2>
+      <div id="grid1">
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+        <div class="cell1"></div>
+      </div>
+      
+      <hr>
+      <h2>Παράδειγμα 2</h2>
+      <div id="shadow">
+        <div id="grid2">
+          <div class="cell2 d white"></div>
+          <div class="cell2 e white2"></div>
+          <div class="cell2 f yellow"></div>
+          <div class="cell2 g blue"></div>
+          <div class="cell2 h yellow"></div>
+          <div class="cell2 t white"></div>
+          <div class="cell2 i black"></div>
+          <div class="cell2 j black"></div>
+          <div class="cell2 k white"></div>
+          <div class="cell2 l yellow"></div>
+          <div class="cell2 n white2"></div>
+          <div class="cell2 u black"></div>
+          <div class="cell2 i red"></div>
+          <div class="cell2 o black"></div>
+          <div class="cell2 m blue"></div>
+          <div class="cell2 p white"></div>
+          <div class="cell2 q yellow"></div>
+          <div class="cell2 r white2"></div>
+          <div class="cell2 s red"></div>
+          <div class="cell2 a grey"></div>
+          <div class="cell2 b white"></div>
+          <div class="cell2 c yellow"></div>
+        </div>
+      </div>
+
+      <hr>
+      <h2>Παράδειγμα 3</h2>
+      <div id="frame3">
+        <div id="grid3">
+          <div class="cell3 one very-dark-blue"></div>
+          <div class="cell3 two dark-blue"></div>
+          <div class="cell3 three yellow"></div>
+          <div class="cell3 four black3"></div>
+          <div class="cell3 five dark-blue"></div>
+          <div class="cell3 six light-blue"></div>
+          <div class="cell3 seven light-blue"></div>
+          <div class="cell3 eight light-blue"></div>
+          <div class="cell3 nine beige"></div>
+          <div class="cell3 ten beige"></div>
+          <div class="cell3 eleven light-blue"></div>
+          <div class="cell3 twelve beige"></div>
+          <div class="cell3 thirteen beige"></div>
+          <div class="cell3 fourteen red3"></div>
+          <div class="cell3 fifteen very-dark-blue"></div>
+          <div class="cell3 sixteen very-dark-blue"></div>
+          <div class="cell3 seventeen beige"></div>
+          <div class="cell3 eighteen black3"></div>
+          <div class="cell3 nineteen light-blue"></div>
+          <div class="cell3 twenty red3"></div>
+          <div class="cell3 twenty-one green-blue"></div>
+          <div class="cell3 twenty-two dark-blue"></div>
+          <div class="cell3 twenty-three yellow"></div>
+          <div class="cell3 twenty-four light-blue">
+            <span class="signature"></span>
+          </div>
+          <div class="cell3 twenty-five dark-blue"></div>
+        </div>
+      </div>
+
+      <hr>
+      <h2>Παράδειγμα 4</h2>
+      <div id="grid4">
+        <div class="ltblue1 one4"></div>
+        <div class="red4 two4"></div>
+        <div class="navy three4"></div>
+        <div class="ltblue2 four4"></div>
+        <div class="navy fourhalf"></div>
+        <div class="ltblue2 five4"></div>
+        <div class="ltblue1 six4"></div>
+        <div class="navy seven4"></div>
+        <div class="ltblue1 eight4"></div>
+        <div class="ltblue2 nine4"></div>
+        <div class="ltgreen ten4"></div>
+    </div>
+
+      <hr>
+      <h2>Παράδειγμα 5</h2>
+      <div id="grid5-ny">
+        <div class="a1 yellow5"></div>
+        <div class="a2 yellow5"></div>
+        <div class="a3 yellow5"></div>
+        <div class="a4 yellow5"></div>
+        <div class="a5 yellow5"></div>
+        <div class="a6 yellow5"></div>
+        <div class="a7 yellow5"></div>
+        <div class="a8 yellow5"></div>
+        <div class="a9 yellow5"></div>
+        <div class="a10 yellow5"></div>
+        <div class="a11 yellow5"></div>
+        <div class="a12 yellow5"></div>
+        <div class="a13 yellow5"></div>
+        <div class="a14 yellow5"></div>
+        <div class="a15 yellow5"></div>
+        <div class="a16 yellow5"></div>
+        <div class="a17 yellow5"></div>
+        <div class="a18 yellow5"></div>
+        <div class="a19 yellow5"></div>
+        <div class="a20 yellow5"></div>
+        <div class="a21 yellow5"></div>
+        <div class="a22 yellow5"></div>
+        <div class="a23 yellow5"></div>
+        <div class="a24 yellow5"></div>
+        <div class="a25 yellow5"></div>
+        <div class="a26 yellow5"></div>
+        <div class="a27 yellow5"></div>
+        <div class="a28 yellow5"></div>
+        <div class="a29 yellow5"></div>
+        <div class="a30 yellow5"></div>
+        <div class="a31 yellow5"></div>
+        <div class="a32 yellow5"></div>
+        <div class="a33 yellow5"></div>
+        <div class="a34 yellow5"></div>
+        <div class="a35 yellow5"></div>
+        <div class="a36 yellow5"></div>
+        <div class="a37 yellow5"></div>
+        <div class="a38 yellow5"></div>
+        <div class="a39 yellow5"></div>
+        <div class="a40 yellow5"></div>
+        <div class="a41 yellow5"></div>
+        <div class="a42 yellow5"></div>
+        <div class="a43 yellow5"></div>
+        <div class="a44 yellow5"></div>
+        <div class="a45 yellow5"></div>
+        <div class="a46 yellow5"></div>
+        <div class="a47 yellow5"></div>
+        <div class="a48 yellow5"></div>
+        <div class="a49 yellow5"></div>
+        <div class="a50 yellow5"></div>
+        <div class="a51 yellow5"></div>
+        <div class="a52 yellow5"></div>
+        <div class="a53 yellow5"></div>
+        <div class="a54 yellow5"></div>
+        <div class="a55 yellow5"></div>
+        <div class="a56 yellow5"></div>
+        <div class="a57 yellow5"></div>
+        <div class="a58 yellow5"></div>
+        <div class="a59 yellow5"></div>
+        <div class="a60 yellow5"></div>
+        <div class="a61 yellow5"></div>
+        <div class="a62 yellow5"></div>
+        <div class="a63 yellow5"></div>
+        <div class="a64 yellow5"></div>
+        <div class="a65 yellow5"></div>
+        <div class="a66 yellow5"></div>
+        <div class="a67 yellow5"></div>
+        <div class="a68 yellow5"></div>
+        <div class="a69 yellow5"></div>
+        <div class="a70 yellow5"></div>
+        <div class="a71 yellow5"></div>
+        <div class="a72 yellow5"></div>
+        <div class="a73 yellow5"></div>
+        <div class="a74 yellow5"></div>
+        <div class="a75 yellow5"></div>
+        <div class="a76 yellow5"></div>
+        <div class="a77 yellow5"></div>
+        <div class="a78 blue5"></div>
+        <div class="a79 blue5"></div>
+        <div class="a80 blue5"></div>
+        <div class="a81 blue5"></div>
+        <div class="a82 blue5"></div>
+        <div class="a83 blue5"></div>
+        <div class="a84 blue5"></div>
+        <div class="a85 blue5"></div>
+        <div class="a86 blue5"></div>
+        <div class="a87 blue5"></div>
+        <div class="a88 blue5"></div>
+        <div class="a89 blue5"></div>
+        <div class="a90 blue5"></div>
+        <div class="a91 blue5"></div>
+        <div class="a92 blue5"></div>
+        <div class="a93 blue5"></div>
+        <div class="a94 blue5"></div>
+        <div class="a95 blue5"></div>
+        <div class="a96 blue5"></div>
+        <div class="a97 blue5"></div>
+        <div class="a98 blue5"></div>
+        <div class="a99 blue5"></div>
+        <div class="a100 blue5"></div>
+        <div class="a101 blue5"></div>
+        <div class="a102 blue5"></div>
+        <div class="a103 blue5"></div>
+        <div class="a104 blue5"></div>
+        <div class="a105 blue5"></div>
+        <div class="a106 blue5"></div>
+        <div class="a107 blue5"></div>
+        <div class="a108 blue5"></div>
+        <div class="a109 blue5"></div>
+        <div class="a110 blue5"></div>
+        <div class="a111 blue5"></div>
+        <div class="a112 blue5"></div>
+        <div class="a113 blue5"></div>
+        <div class="a114 blue5"></div>
+        <div class="a115 blue5"></div>
+        <div class="a116 blue5"></div>
+        <div class="a117 blue5"></div>
+        <div class="a118 blue5"></div>
+        <div class="a119 blue5"></div>
+        <div class="a120 blue5"></div>
+        <div class="a121 blue5"></div>
+        <div class="a122 blue5"></div>
+        <div class="a123 red5"></div>
+        <div class="a124 red5"></div>
+        <div class="a125 red5"></div>
+        <div class="a126 red5"></div>
+        <div class="a127 red5"></div>
+        <div class="a128 red5"></div>
+        <div class="a129 red5"></div>
+        <div class="a130 red5"></div>
+        <div class="a131 red5"></div>
+        <div class="a132 red5"></div>
+        <div class="a133 red5"></div>
+        <div class="a134 red5"></div>
+        <div class="a135 red5"></div>
+        <div class="a136 red5"></div>
+        <div class="a137 red5"></div>
+        <div class="a138 red5"></div>
+        <div class="a139 red5"></div>
+        <div class="a140 red5"></div>
+        <div class="a141 red5"></div>
+        <div class="a142 red5"></div>
+        <div class="a143 red5"></div>
+        <div class="a144 red5"></div>
+        <div class="a145 red5"></div>
+        <div class="a146 red5"></div>
+        <div class="a147 red5"></div>
+        <div class="a148 red5"></div>
+        <div class="a149 red5"></div>
+        <div class="a150 red5"></div>
+        <div class="a151 red5"></div>
+        <div class="a152 red5"></div>
+        <div class="a153 red5"></div>
+        <div class="a154 red5"></div>
+        <div class="a155 red5"></div>
+      </div>
+
+      <hr>
+      <h2>Παράδειγμα 6</h2>
+      <div id="grid6">
+        <div class="pink6 pink__1"></div>
+        <div class="pink6 pink__2"></div>
+        <div class="pink6 pink__3"></div>
+        <div class="pink6 pink__4"></div>
+        <div class="pink6 pink__5"></div>
+        <div class="pink6 pink__6"></div>
+    
+        <div class="blue6 blue__1"></div>
+        <div class="blue6 blue__2"></div>
+        <div class="blue6 blue__3"></div>
+        <div class="blue6 blue__4"></div>
+        <div class="blue6 blue__5"></div>
+        <div class="blue6 blue__6"></div>
+        <div class="blue6 blue__7"></div>
+        <div class="blue6 blue__8"></div>
+    
+        <div class="orange6 orange__1"></div>
+        <div class="orange6 orange__2"></div>
+        <div class="orange6 orange__3"></div>
+        <div class="orange6 orange__4"></div>
+        <div class="orange6 orange__5"></div>
+        <div class="orange6 orange__6"></div>
+        <div class="orange6 orange__7"></div>
+        <div class="orange6 orange__8"></div>
+        <div class="orange6 orange__9"></div>
+        <div class="orange6 orange__10"></div>
+        <div class="orange6 orange__11"></div>
+        
+        <div class="black6 black__1"></div>
+        <div class="black6 black__2"></div>
+        <div class="black6 black__3"></div>
+        <div class="black6 black__4"></div>
+        <div class="black6 black__5"></div>
+        <div class="black6 black__6"></div>
+        <div class="black6 black__7"></div>
+        <div class="black6 black__8"></div>
+        <div class="black6 black__9"></div>
+        <div class="black6 black__10"></div>
+        <div class="black6 black__11"></div>
+        <div class="black6 black__12"></div>
+        <div class="black6 black__13"></div>
+        <div class="black6 black__14"></div>
+        <div class="black6 black__15"></div>
+        <div class="black6 black__16"></div>
+        <div class="black6 black__17"></div>
+        <div class="black6 black__18"></div>
+        <div class="black6 black__19"></div>
+        <div class="black6 black__20"></div>
+        <div class="black6 black__21"></div>
+        <div class="black6 black__22"></div>
+        <div class="black6 black__23"></div>
+        <div class="black6 black__24"></div>
+        <div class="black6 black__25"></div>
+        <div class="black6 black__26"></div>
+        <div class="black6 black__27"></div>
+        <div class="black6 black__28"></div>
+        <div class="black6 black__29"></div>
+      </div>
+
+      <hr>
+      <h2>Παράδειγμα 7</h2>
+      <div id="shadow2">
+        <svg
+        viewBox="0 0 208 230"
+        version="1.1"
+        id="svg7"
+        xml:space="preserve"
+        inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+        sodipodi:docname="doesburg_ink_4_plain.svg"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+        
+
+
+          <defs
+          id="defs2">         
+          <linearGradient
+            inkscape:collect="always"
+            id="linearGradient7777"><stop
+              style="stop-color:#000000;stop-opacity:1;"
+              offset="0"
+              id="stop7773" /><stop
+              style="stop-color:#000000;stop-opacity:0;"
+              offset="1"
+              id="stop7775" />
+            </linearGradient>
+              <radialGradient
+            inkscape:collect="always"
+            xlink:href="#linearGradient7777"
+            id="radialGradient7781"
+            cx="105.26582"
+            cy="121.74976"
+            fx="105.26582"
+            fy="121.74976"
+            r="105.10911"
+            gradientTransform="matrix(1,0,0,1.1568269,0,-19.093642)"
+            gradientUnits="userSpaceOnUse" /></defs><g
+          inkscape:label="image"
+          inkscape:groupmode="layer"
+          id="layer1"
+          transform="matrix(1,0,0,1.244274,-0.1567053,-0.23545404)"
+          style="display:none"
+          sodipodi:insensitive="true">
+          <image
+            width="209.36597"
+            height="195.0517"
+            preserveAspectRatio="none"
+            style="display:none;image-rendering:optimizeQuality"
+            id="image17"
+            x="0.32237387"
+            y="0.32237875"
+            sodipodi:insensitive="true" /></g><g
+          inkscape:groupmode="layer"
+          id="layer3"
+          inkscape:label="background"
+          style="display:inline;fill:#0000ff"
+          transform="translate(-0.1567053,-0.1567053)"><rect
+            style="display:inline;opacity:1;fill:#140f19;fill-opacity:1;stroke:url(#radialGradient7781);stroke-width:0.264973;stroke-opacity:1;image-rendering:auto"
+            id="rect7522"
+            width="209.95325"
+            height="242.92113"
+            x="0.28919181"
+            y="0.28919181"
+            sodipodi:insensitive="true" /></g><g
+          inkscape:groupmode="layer"
+          id="layer2"
+          inkscape:label="draw"
+          style="display:inline;fill:#0000ff"
+          transform="translate(-0.1567053,-0.1567053)"><rect
+            style="fill:#9b3223;fill-opacity:1;stroke-width:0.138745"
+            id="rect421-7-5-3"
+            width="10.476851"
+            height="24.848621"
+            x="50.351154"
+            y="39.460918"
+            transform="matrix(0.996513,0.08343764,-0.00191341,0.99999817,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#9b3223;fill-opacity:1;stroke-width:0.22619"
+            id="rect421-7-5-3-66"
+            width="18.022598"
+            height="38.390404"
+            x="121.42481"
+            y="161.01334"
+            transform="matrix(0.99999964,-8.4363188e-4,-0.00464592,0.99998921,0,0)"
+            inkscape:transform-center-x="-13.447055"
+            inkscape:transform-center-y="-1.3108377"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.26867"
+            id="rect421-7-5-3-66-9"
+            width="13.16297"
+            height="74.161598"
+            x="4.1020327"
+            y="107.82408"
+            transform="matrix(0.99999751,-0.0022314,-0.00175651,0.99999846,0,0)"
+            inkscape:transform-center-x="-9.8211587"
+            inkscape:transform-center-y="-2.5322632"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.218555"
+            id="rect421-7-5-3-66-9-7"
+            width="47.990463"
+            height="13.460532"
+            x="108.5218"
+            y="109.40455"
+            transform="matrix(0.99999999,-1.1101705e-4,-0.03528338,0.99937735,0,0)"
+            inkscape:transform-center-x="-35.806742"
+            inkscape:transform-center-y="-0.4593221"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.167056"
+            id="rect421-7-5-3-66-9-7-7"
+            width="11.340572"
+            height="33.279968"
+            x="154.0155"
+            y="128.83621"
+            transform="matrix(0.99999932,-0.00116225,-0.00337232,0.99999431,0,0)"
+            inkscape:transform-center-x="-8.4614577"
+            inkscape:transform-center-y="-1.1363378"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.149577"
+            id="rect421-7-5-3-66-9-7-7-3"
+            width="23.676317"
+            height="12.779394"
+            x="188.79846"
+            y="77.877861"
+            transform="matrix(0.99939027,0.03491553,-0.05105954,0.99869561,0,0)"
+            inkscape:transform-center-x="-17.668835"
+            inkscape:transform-center-y="0.18451526"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.191187"
+            id="rect421-7-5-3-66-9-7-7-3-9"
+            width="11.814347"
+            height="41.840946"
+            x="17.884392"
+            y="59.24361"
+            transform="matrix(0.99884493,-0.04805002,0.00445839,0.99999006,0,0)"
+            inkscape:transform-center-x="-8.794506"
+            inkscape:transform-center-y="-1.8396341"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.192811"
+            id="rect421-7-5-3-66-9-7-7-3-9-8"
+            width="12.015872"
+            height="41.840958"
+            x="24.156733"
+            y="123.67823"
+            transform="matrix(0.99923901,-0.03900519,-0.0039963,0.99999201,0,0)"
+            inkscape:transform-center-x="-8.9601336"
+            inkscape:transform-center-y="-1.7658001"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.206219"
+            id="rect421-7-5-3-66-9-7-7-3-9-9"
+            width="11.075352"
+            height="51.926983"
+            x="102.73376"
+            y="53.090244"
+            transform="matrix(0.99932706,-0.0366802,-0.02029862,0.99979396,0,0)"
+            inkscape:transform-center-x="-8.2899796"
+            inkscape:transform-center-y="-2.0602894"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.163063"
+            id="rect421-7-5-3-66-9-7-7-3-9-1"
+            width="17.238319"
+            height="20.860083"
+            x="85.100128"
+            y="140.89206"
+            transform="matrix(0.99986523,-0.01641686,0.01306147,0.9999147,0,0)"
+            inkscape:transform-center-x="-12.845181"
+            inkscape:transform-center-y="-0.91708608"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.282836"
+            id="rect421-7-5-3-66-9-7-7-3-9-3"
+            width="67.565536"
+            height="16.011875"
+            x="77.391747"
+            y="207.91983"
+            transform="matrix(0.99987299,0.0159372,0.04916944,0.99879045,0,0)"
+            inkscape:transform-center-x="-50.356511"
+            inkscape:transform-center-y="0.26174261"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.21639"
+            id="rect421-7-5-3-66-9-7-7-3-9-0"
+            width="9.8265285"
+            height="65.299698"
+            x="184.59981"
+            y="194.19493"
+            transform="matrix(0.99645097,-0.08417525,-0.00217161,0.99999764,0,0)"
+            inkscape:transform-center-x="-7.3073047"
+            inkscape:transform-center-y="-2.8271896"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#c8af69;fill-opacity:1;stroke-width:0.213875"
+            id="rect421-7-5-3-66-9-7-7-3-9-6"
+            width="11.823244"
+            height="52.321457"
+            x="163.0567"
+            y="52.953381"
+            transform="matrix(0.99886921,-0.04754267,-0.01085773,0.99994105,0,0)"
+            inkscape:transform-center-x="-8.8268842"
+            inkscape:transform-center-y="-2.1901448"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.164866"
+            id="rect421-7-5-3-66-9-0"
+            width="29.564272"
+            height="12.433547"
+            x="38.83569"
+            y="83.460258"
+            transform="matrix(0.99989785,0.01429309,-0.0379846,0.99927832,0,0)"
+            inkscape:transform-center-x="-22.062393"
+            inkscape:transform-center-y="-0.10543661"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#e6e6d7;fill-opacity:1;stroke-width:0.252944"
+            id="rect421-7-5-3-66-9-0-8"
+            width="10.863845"
+            height="79.646408"
+            x="69.657082"
+            y="65.908493"
+            transform="matrix(0.99808354,0.06188095,0.0062282,0.9999806,0,0)"
+            inkscape:transform-center-x="-8.069799"
+            inkscape:transform-center-y="-2.1946517"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#9b3223;fill-opacity:1;stroke-width:0.117623"
+            id="rect421-7-5-3-6"
+            width="18.995018"
+            height="9.850008"
+            x="52.270008"
+            y="153.97278"
+            transform="matrix(0.99997818,0.00660629,-0.01036046,0.99994633,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#9b3223;fill-opacity:1;stroke-width:0.196346"
+            id="rect421-7-5-3-6-4"
+            width="42.649868"
+            height="12.22417"
+            x="16.834106"
+            y="207.95686"
+            transform="matrix(0.99985585,0.01697866,0.00517798,0.99998659,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="opacity:1;fill:#23376e;fill-opacity:1;stroke-width:0.264583"
+            id="rect421"
+            width="57.870525"
+            height="16.359159"
+            x="28.834547"
+            y="176.3558"
+            transform="rotate(1.5181469)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.129755"
+            id="rect421-3"
+            width="9.2020245"
+            height="24.743229"
+            x="129.95308"
+            y="36.399132"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.158726"
+            id="rect421-7"
+            width="17.177116"
+            height="19.83548"
+            x="110.52658"
+            y="131.69124"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#9b3223;fill-opacity:1;stroke-width:0.14235"
+            id="rect421-7-5"
+            width="14.703527"
+            height="18.63751"
+            x="148.06287"
+            y="1.4102455"
+            transform="matrix(0.99794306,0.06410652,-0.08480502,0.99639757,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.174373"
+            id="rect421-7-1"
+            width="8.3473444"
+            height="49.261318"
+            x="177.22644"
+            y="117.1297"
+            transform="matrix(0.99945453,0.03302474,-0.01890228,0.99982134,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.159882"
+            id="rect421-47"
+            width="20.871927"
+            height="16.562677"
+            x="14.838428"
+            y="-50.0051"
+            transform="matrix(0.0037328,0.99999303,-0.99999989,4.7369895e-4,0,0)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.111698"
+            id="rect421-4"
+            width="21.543455"
+            height="7.8319449"
+            x="88.308701"
+            y="-56.320091"
+            transform="matrix(-0.00261632,1.2442697,-0.99999874,-0.00196837,0,-0.07874874)"
+            sodipodi:insensitive="true" /><rect
+            style="fill:#23376e;fill-opacity:1;stroke-width:0.210572"
+            id="rect421-37"
+            width="9.1070004"
+            height="65.845619"
+            x="197.27303"
+            y="-0.80726606"
+            transform="rotate(2.6197355)"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#9b3223;fill-opacity:1;stroke-width:0.114132"
+            id="rect421-7-5-3-66-4"
+            width="18.022593"
+            height="9.7744207"
+            x="130.7963"
+            y="69.717499"
+            transform="matrix(0.9994947,0.03178592,-0.0502334,0.99873751,0,0)"
+            inkscape:transform-center-x="-13.450841"
+            inkscape:transform-center-y="0.096782135"
+            sodipodi:insensitive="true" /><rect
+            style="display:inline;fill:#9b3223;fill-opacity:1;stroke-width:0.134733"
+            id="rect421-7-5-3-66-4-0"
+            width="19.975227"
+            height="12.289783"
+            x="196.3642"
+            y="123.28195"
+            transform="matrix(0.99866682,0.05161963,-0.0660182,0.99781842,0,0)"
+            inkscape:transform-center-x="-14.904847"
+            inkscape:transform-center-y="0.35389155"
+            sodipodi:insensitive="true" /></g>
+        </svg>
+      </div>
+
+      <hr>
+      
+    </div>
+  </div>
+
+  <div id="links">
+    <ul>
+      <li onclick="location.href='index.html'">Εισαγωγή</li>
+      <li onclick="location.href='hypertext.html'">HTML</li>
+      <li onclick="location.href='CSS.html'">CSS</li>
+      <li onclick="location.href='javascript.html'">JavaScript</li>
+      <li onclick="location.href='mondrian_CSS_1.html'">Mondrian CSS: 1</li>
+      <li onclick="location.href='mondrian_CSS_2.html'">Mondrian CSS: 2</li>
+      <li onclick="location.href='mondrian_JS.html'">Mondrian JS</li>
+      <li onclick="location.href='end.html'">Επίλογος</li>
+    </ul>
+  </div>
+
+
+</body>
+</html>
